@@ -2,18 +2,19 @@ import likeSvg from "../assets/like-svgrepo-com.svg";
 import dislikeSvg from "../assets/dislike-svgrepo-com.svg";
 import { useAppDispatch } from "../service/hooks";
 import { addLike, deleteLike } from "../service/postSlice";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { TPropsPost } from "./Post";
 
 export const PostPage = (props: TPropsPost) => {
-  const { title, body, like, dislike, id, index } = props;
+  const { title, body, like, dislike, id } = props;
   const dispatch = useAppDispatch();
+  const navigate = useNavigate()
 
   return (
     <div className="w-lg flex justify-center m-auto">
       <div className="flex flex-col gap-8">
         <div className="flex justify-between">
-          <Link to={"/"}>Вернуться к статьям</Link>
+          <button onClick={()=>navigate(-1)}>Вернуться к статьям</button>
           <div className="flex gap-8 ">
             <div className="flex gap-1">
               <img
