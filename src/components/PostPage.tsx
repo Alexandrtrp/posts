@@ -14,11 +14,11 @@ export const PostPage = (props: TPropsPost) => {
     <div className="w-lg flex justify-center m-auto">
       <div className="flex flex-col gap-8">
         <div className="flex justify-between">
-          <button onClick={()=>navigate(-1)}>Вернуться к статьям</button>
+          <button className="cursor-pointer" onClick={()=>navigate(-1)}>Вернуться к статьям</button>
           <div className="flex gap-8 ">
             <div className="flex gap-1">
               <img
-                className="w-4"
+                className="w-4 cursor-pointer"
                 src={likeSvg}
                 onClick={() => dispatch(addLike(id))}
                 alt=""
@@ -27,7 +27,7 @@ export const PostPage = (props: TPropsPost) => {
             </div>
             <div className="flex gap-1 items-center">
               <img
-                className="w-4"
+                className="w-4 cursor-pointer"
                 src={dislikeSvg}
                 alt=""
                 onClick={() => dispatch(deleteLike(id))}

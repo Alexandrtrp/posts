@@ -29,7 +29,7 @@ export const Post = (props: TPropsPost) => {
         <div className="flex gap-8 items-start">
           <div className="flex gap-1">
             <img
-              className="w-4"
+              className="w-4 cursor-pointer"
               src={likeSvg}
               onClick={() => dispatch(addLike(id))}
               alt=""
@@ -38,7 +38,7 @@ export const Post = (props: TPropsPost) => {
           </div>
           <div className="flex gap-1 items-center">
             <img
-              className="w-4"
+              className="w-4 cursor-pointer"
               src={dislikeSvg}
               alt=""
               onClick={() => dispatch(deleteLike(id))}

@@ -19,20 +19,6 @@ export const filterThunk = createAsyncThunk(
   }
 );
 
-export const getPostThunk = createAsyncThunk(
-  "posts/getPostThunk",
-  async function filter(title: string) {
-    try {
-      const res = await fetch(
-        `https://jsonplaceholder.typicode.com/posts`
-      );
-      return checkResponse(res);
-    } catch (err) {
-      return console.log(`Ошибка. Запрос не выполнен: ${err}`);
-    }
-  }
-);
-
 type TInitialState = {
   posts: TPropsPost[];
   loading: boolean;
