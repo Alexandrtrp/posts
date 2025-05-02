@@ -69,9 +69,9 @@ export const postSlice = createSlice({
         state.error = action.error.message;
       })
       .addCase(filterThunk.fulfilled, (state, action) => {
-        const randomLike = Math.floor(Math.random() * 50);
-        const randomDislike = Math.floor(Math.random() * 50);
         state.posts = action.payload.map((post: TPropsPost) => {
+          const randomLike = Math.floor(Math.random() * 50);
+          const randomDislike = Math.floor(Math.random() * 50);
           return { ...post, like: randomLike, dislike: randomDislike };
         });
       });

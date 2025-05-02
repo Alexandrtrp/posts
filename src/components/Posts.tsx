@@ -8,9 +8,9 @@ export const Posts = () => {
   const posts = useAppSelector((state) => state.posts.posts);
   const filter = useAppSelector((state) => state.posts.filter);
 
-  useEffect(() => {
-    dispatch(filterThunk(filter));
-  }, [filter]);
+  // useEffect(() => {
+  //   dispatch(filterThunk(filter));
+  // }, [filter]);
 
   return (
     <div className="flex flex-col gap-6">
